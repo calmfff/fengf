@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.feng.design.mapper.UserMapping">
+
+    <resultMap id="userInfo" type="com.feng.design.model.User">
+        <result property="id" column="uid"/>
+        <result property="name" column="uname"/>
+        <result property="password" column="upassword"/>
+        <result property="roleId" column="roleid"/>
+        <result property="state" column="ustate"/>
+        <result property="createTime" column="createtime"/>
+        <result property="createAt" column="creater"/>
+        <result property="modificationTime" column="modificationtime"/>
+        <result property="modifier" column="modifier"/>
+        <result property="loginName" column="loginName"></result>
+    </resultMap>
+    <select id="getLogin" resultMap="userInfo" >
+        select
+        loginName,uid ,uname,upassword,roleid, ustate, createtime,creater,modificationtime,modifier
+        from user
+        where loginName = #{loginName} and upassword = #{password}
+
+    </select>
+    <select id="getUserList" resultMap="userInfo">
+       select
+        loginName,uid ,uname,upassword,roleid, ustate, createtime,creater,modificationtime,modifier
+        from user
+        where uname=#{name}
+    </select>
+
+
+</mapper>
+
+
+
