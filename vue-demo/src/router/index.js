@@ -20,7 +20,7 @@ export default new Router({
       name: 'user',
       component: () => import('@/view/manage/user/index'),
       hidden: true
-      //用户界面
+      //用户界面首页
      },
      {
       path: '/mindex',

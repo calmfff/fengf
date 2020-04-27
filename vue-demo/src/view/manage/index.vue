@@ -1,4 +1,4 @@
-<template>
+no<template>
   <div class="dashboard-container">
     <div class="dashboard-editor-container">
       <panel-group />

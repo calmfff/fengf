@@ -18,12 +18,14 @@
       <el-checkbox v-model="loginForm.rememberMe" style="margin:0 0 25px 0;">
         记住我
       </el-checkbox>
-      <button @click="go">点我跳转</button>
       <el-form-item style="width:100%;">
         <el-button :loading="loading" size="medium" type="primary" style="width:100%;" @click.native.prevent="selectUser" >
           <span v-if="!loading">登 录</span>
           <span v-else>登 录 中...</span>
         </el-button>
+        <router-link to="/mindex" class="f">进入管理员界面</router-link>
+
+        <router-link to="/user" class="s">进入用户界面</router-link>
       </el-form-item>
     </el-form>
     <!--  底部  -->
@@ -180,5 +182,13 @@ export default {
       cursor: pointer;
       vertical-align:middle
     }
+  }
+  .f{
+    left: 0;
+    color: #707070;
+  }
+  .s{
+    right: 0;
+    color: #707070;
   }
 </style>

@@ -1,69 +1,62 @@
 <template>
     
+    <div class="mmain">
+      <div class="mleft">
+        <mleft></mleft>
+      </div>
+      <div class="mright">
+           <div class="mtop">
+               <mtop></mtop>
+           </div>
+          <div class="mbuttom">
+              <mbottom></mbottom>
+          </div>
+      </div>
 
-<el-container style="height: 500px; border: 1px solid #eee">
-  <el-aside width="300px" style="background-color: rgb(238, 241, 246)">
-    <el-menu :default-openeds="['1', '6']">
-       
-        <el-menu-item index="1"><i class="el-icon-star-on"></i>首页</el-menu-item>      
-        <el-menu-item index="2"><i class="el-icon-star-on"></i>管理员管理</el-menu-item>
-        <el-menu-item index="3"><i class="el-icon-star-on"></i>用户管理</el-menu-item>
-        <el-menu-item index="4"><i class="el-icon-star-on"></i>投票信息管理</el-menu-item>
-        <el-menu-item index="5"><i class="el-icon-star-on"></i>科研成果信息管理</el-menu-item>
-        <el-submenu index="6">
-           <template slot="title"><i class="el-icon-star-on"></i>系统设置</template> 
-           <el-menu-item-group>      
-              <el-menu-item index="1-1">修改密码</el-menu-item>
-              <el-menu-item index="1-2">修改个人资料</el-menu-item>
-           </el-menu-item-group>      
-        </el-submenu>
+    </div>
 
-    </el-menu>
-  </el-aside>
-  
-  <el-container>
-    <el-header style="text-align: right; font-size: 12px">
-      <el-dropdown>
-        <i class="el-icon-setting" style="margin-right: 15px"></i>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>注销</el-dropdown-item>
-          <el-dropdown-item>刷新</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-      <span>此处添加管理员名</span>
-    </el-header>
-    
-    <el-main>
-      <el-table :data="tableData">
-        <el-table-column prop="date" label="管理员名" width="140">
-        </el-table-column>
-        <el-table-column prop="name" label="姓名" width="120">
-        </el-table-column>
-        <el-table-column prop="address" label="地址">
-        </el-table-column>
-      </el-table>
-    </el-main>
-  </el-container>
-</el-container>
 </template>
 
 <style>
-  .el-header {
-    background-color: #B3C0D1;
-    color: #333;
-    line-height: 60px;
+  .mright{
+    width: 1000px;
+    float: left;
+    margin-left: 10px;
+    margin-top: -5px;
   }
+  .mleft {
+    width: 300px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    
+  }
+  .main{
+    width: 1200px;
+    margin: 20px auto;
+  }
+  .mtop{
+    height: 60px;
+    width: 1000px;   
+  }
+  .mleft,.mtop{
+    background-color:#C0C4CC;
+  }
+ 
   
-  .el-aside {
-    color: #333;
-  }
 </style>
 
 <script>
+  import mleft from '../../../components/mleft.vue'
+  import mtop from '../../../components/mtop.vue'
+  import mbottom from '../../../components/mbottom.vue'
+  //引用的效果
   export default {
-      name:'mindex',
-      go(){
-           this.$router.push('/mana')
+    //对所需要引用的组件进行注册
+      components:{
+        mleft,
+        mtop,
+        mbottom
       },
     data() {
       const item = {
