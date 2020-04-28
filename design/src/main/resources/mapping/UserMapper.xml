@@ -21,11 +21,16 @@
         where loginName = #{loginName} and upassword = #{password}
 
     </select>
-    <select id="getUserList" resultMap="userInfo">
+    <select id="getUserList" resultMap="userInfo" parameterType="com.feng.design.model.User">
        select
         loginName,uid ,uname,upassword,roleid, ustate, createtime,creater,modificationtime,modifier
         from user
-        where uname=#{name}
+        where
+        1=1
+        <if test="name !=null">
+           and uname = #{name}
+        </if>
+
     </select>
 
 

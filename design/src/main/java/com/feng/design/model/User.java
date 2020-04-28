@@ -5,9 +5,37 @@ public class User {
     private String name;
     private String password;
     private String roleId;
-    private String state;
+
+    public Boolean getState() {
+        return state;
+    }
+
+    private Boolean state;
+
+    public String getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(String isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    private String isDelete;
+    public void setState(Boolean state) {
+        this.state = state;
+    }
+
     private String createTime;
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    private String token;
     @Override
     public String toString() {
         return "User{" +
@@ -71,13 +99,7 @@ public class User {
         this.roleId = roleId;
     }
 
-    public String getState() {
-        return state;
-    }
 
-    public void setState(String state) {
-        this.state = state;
-    }
 
     public String getCreateTime() {
         return createTime;
