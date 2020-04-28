@@ -113,7 +113,7 @@ export default {
             getList(this.query).then(res => {
                 console.log(res);
                 this.tableData = res.data;
-                this.pageTotal = res.pageTotal || 50;
+                this.pageTotal = res.total;
             });
         },
         // 触发搜索按钮

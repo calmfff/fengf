@@ -7,4 +7,5 @@ import java.util.List;
 public interface UserService {
     User getLogin(User user);
     List<User> getUserList(User user);
+    Integer getUserCount(User user);
 }

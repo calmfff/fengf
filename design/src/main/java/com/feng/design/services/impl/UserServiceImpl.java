@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getUserList(User user) {
         return this.userMapping.getUserList(user);
     }
+
+    @Override
+    public Integer getUserCount(User user) {
+        return this.userMapping.getUserCount(user);
+    }
 }

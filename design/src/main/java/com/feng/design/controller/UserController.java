@@ -72,7 +72,7 @@ public class UserController extends BaseController {
         if (name != null && !name.equals("")){
             user.setName(name);
         }
-
+        Integer count = userService.getUserCount(user);
         List<User> userList = userService.getUserList(user)
                 .stream()
                 .map(user1 -> {
@@ -80,9 +80,9 @@ public class UserController extends BaseController {
                     return user1;
                 }).collect(Collectors.toList());
 
-                ;
 
         logger.info(String.valueOf(userList));
+        responseVo.setTotal(count);
         responseVo.setCode(200);
         responseVo.setMsg("查询成功");
         responseVo.setData(userList);

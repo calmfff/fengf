@@ -1,6 +1,6 @@
 package com.feng.design.model;
 
-public class User {
+public class User extends BaseVo {
     private String id;
     private String name;
     private String password;

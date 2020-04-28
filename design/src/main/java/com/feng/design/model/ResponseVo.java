@@ -1,6 +1,6 @@
 package com.feng.design.model;
 
-public class ResponseVo {
+public class ResponseVo extends BaseVo {
     private String msg;
 
     public String getMsg() {
